@@ -1,2 +1,2 @@
-@props(['width' => 90])
-<img src="http://picsum.photos/seed/{{ rand(0, 100000) }}/{{ $width }}" alt="" class="rounded-xl"/>
+@props(['employer', 'width' => 90])
+<img src="{{ Illuminate\Support\Str::startsWith($employer->logo, 'http') ? asset($employer->logo): Storage::url($employer->logo) }}" alt="" class="rounded-xl" width="{{ $width }}"/>
